@@ -10,6 +10,7 @@
 //we'll set the doc to be ready*/
 
 $(document).ready(function()
+var Random=Math.floor(Math.random()*101+19)
 //Before anything we need to set some variables*/
 var numberToMatch =
 var wins =
