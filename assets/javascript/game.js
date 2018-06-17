@@ -10,17 +10,21 @@
 //we'll set the doc to be ready*/
 
 $(document).ready(function()
-var Random=Math.floor(Math.random()*101+19)
+
 //Before anything we need to set some variables*/
-var numberToMatch =
-var wins =
-var losses =
+
 
 //This is  where we grab the numberToMatch element//
 /*This is where we enter the random number generator ranging from 19-120*/
-
-var numberToMatch = $("#numberToMatch");
-
+{
+    var Random=Math.floor(Math.random()*101+19)
+    // Selects a random number to be shown at the start of the game
+    // Number should be should be between 19 - 120
+    //
+    $('#randomNumber').text(Random);
+    // Appending random number to the randomNumber id in the html doc
+    //
+    
 
 
 //This is where we enter the 4 crystals and attach an on.click method to them//
