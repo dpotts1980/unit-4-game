@@ -17,7 +17,7 @@
        //this will reset the crystals//
        $(".crystals").empty();
        //this is where we'll create the overall random number//
-   var randomResult = Math.floor((Math.random() * 101) + 19);
+        randomResult = Math.floor((Math.random() * 101) + 19);
    //console.log(randomResult);
    
    //this is a for loop to create the four separate crystals//
@@ -49,11 +49,12 @@ startAndReset();
 
     previousNumber += num;
     console.log(previousNumber);
-
+    console.log(randomResult);
     //this is where we determine winner or loser//
     if(previousNumber > randomResult) {
        losses++;
        $("#losses").html(losses);
+       console.log(losses);
        previousNumber = 0;
        startAndReset();
     }
