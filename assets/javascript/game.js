@@ -9,8 +9,8 @@
    */
   
    var randomResult;
-   var wins;
-   var losses;
+   var wins = 0;
+   var losses = 0;
    var previousNumber = 0;
 
    //this is where we'll create the overall random number//
@@ -43,5 +43,16 @@
 
     previousNumber += num;
     console.log(previousNumber);
+
+    //this is where we determine winner or loser//
+    if(previousNumber > randomResult) {
+       losses++;
+       $("losses").html(losses);
+    }
+
+    else if(previousNumber === randomResult) {
+        wins++;
+        $("#wins").html(wins);
+    }
 
    });
