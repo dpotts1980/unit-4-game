@@ -11,6 +11,7 @@
    var randomResult;
    var wins;
    var losses;
+   var previousNumber = 0;
 
    //this is where we'll create the overall random number//
    var randomResult = Math.floor((Math.random() * 101) + 19);
@@ -36,7 +37,11 @@
     
     var num = parseInt($(this).attr("data-random"));
 
-    var result = num + 5;
-    console.log(num, ' + ', result);
+    /*var result = num + 5;
+    console.log(num, ' + ', result);*/
+   
+
+    previousNumber += num;
+    console.log(previousNumber);
 
    });
