@@ -13,7 +13,10 @@
    var losses = 0;
    var previousNumber = 0;
 
-   //this is where we'll create the overall random number//
+   var startAndReset = function () {
+       //this will reset the crystals//
+       $(".crystals").empty();
+       //this is where we'll create the overall random number//
    var randomResult = Math.floor((Math.random() * 101) + 19);
    //console.log(randomResult);
    
@@ -31,9 +34,12 @@
            });
        $(".crystals").append(crystal);
    }
+}
 
+startAndReset();
+   
    //this is where we'll create our on click for each crystal//
-   $(".crystal").on("click", function() {
+   $(document).on("click", ".crystal", function() {
     
     var num = parseInt($(this).attr("data-random"));
 
@@ -47,12 +53,16 @@
     //this is where we determine winner or loser//
     if(previousNumber > randomResult) {
        losses++;
-       $("losses").html(losses);
+       $("#losses").html(losses);
+       previousNumber = 0;
+       startAndReset();
     }
 
     else if(previousNumber === randomResult) {
         wins++;
         $("#wins").html(wins);
+        previousNumber = 0;
+        startAndReset();
     }
 
    });
