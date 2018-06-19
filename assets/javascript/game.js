@@ -18,7 +18,6 @@
        $(".crystals").empty();
        //this is where we'll create the overall random number//
         randomResult = Math.floor((Math.random() * 101) + 19);
-   //console.log(randomResult);
    
    //this is a for loop to create the four separate crystals//
     $("#randomResult").html("Number to Get: " + randomResult);
@@ -26,7 +25,6 @@
 
     //this is where we have the random number between 1-12 for each crystal//
     var random = Math.floor((Math.random() * 11) + 1);
-       //console.log(random);
        var crystal = $("<div>");
            crystal.attr({
             "class": 'crystal',
@@ -40,18 +38,14 @@ startAndReset();
    
    //this is where we'll create our on click for each crystal//
    $(document).on("click", ".crystal", function() {
-    
-    var num = parseInt($(this).attr("data-random"));
-
-    /*var result = num + 5;
-    console.log(num, ' + ', result);*/
-   
+    var num = parseInt($(this).attr("data-random"));    
 
     previousNumber += num;
+    $("#userScore").text(previousNumber);
     console.log(previousNumber);
-    console.log(randomResult);
     //this is where we determine winner or loser//
     if(previousNumber > randomResult) {
+
        losses++;
        $("#losses").html(losses);
        console.log(losses);
