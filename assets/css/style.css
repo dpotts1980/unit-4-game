@@ -5,8 +5,10 @@
 }
 
 .crystal {
-	border: solid green;
+	border: solid black;
+	background-color: gainsboro;
 	height: 200px;
 	width: 200px;
+	
 
 }

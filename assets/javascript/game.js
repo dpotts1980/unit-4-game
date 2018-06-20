@@ -12,8 +12,7 @@
    var wins = 0;
    var losses = 0;
    var previousNumber = 0;
-   var crystalImages = ["../images/blue.png", "../images/green.png", "../images/red.png", "../images/yellow.png"];
-   console.log(crystalImages);
+   
 
    
    
@@ -21,6 +20,14 @@
    var startAndReset = function () {
        //this will reset the crystals//
        $(".crystals").empty();
+       //this is where we'll store our crystal images in an array//
+       var crystalImages = 
+       ["../images/blue.png", 
+       "../images/green.png", 
+       "../images/red.png", 
+       "../images/yellow.png"];
+       console.log();
+       
        //this is where we'll create the overall random number//
         randomResult = Math.floor((Math.random() * 101) + 19);
    
@@ -35,6 +42,10 @@
             "class": 'crystal',
             "data-random": random
            });
+           crystal.css({
+             "background-image":"url('" + crystalImages[i] + "")
+           })
+       
        $(".crystals").append(crystal);
            
    }
