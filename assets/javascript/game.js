@@ -12,6 +12,11 @@
    var wins = 0;
    var losses = 0;
    var previousNumber = 0;
+   var crystalImages = ["../images/blue.png", "../images/green.png", "../images/red.png", "../images/yellow.png"];
+   console.log(crystalImages);
+
+   
+   
 
    var startAndReset = function () {
        //this will reset the crystals//
@@ -22,7 +27,7 @@
    //this is a for loop to create the four separate crystals//
     $("#randomResult").html("Number to Get: " + randomResult);
    for(i = 0; i < 4; i++) {
-
+    
     //this is where we have the random number between 1-12 for each crystal//
     var random = Math.floor((Math.random() * 11) + 1);
        var crystal = $("<div>");
@@ -31,6 +36,7 @@
             "data-random": random
            });
        $(".crystals").append(crystal);
+           
    }
 }
 
@@ -51,6 +57,7 @@ startAndReset();
        console.log(losses);
        previousNumber = 0;
        startAndReset();
+       alert("Sorry you lost... try again! ")
     }
 
     else if(previousNumber === randomResult) {
@@ -58,6 +65,7 @@ startAndReset();
         $("#wins").html(wins);
         previousNumber = 0;
         startAndReset();
+        alert("Congratulations!! You Won!! ")
     }
 
    });
