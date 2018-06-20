@@ -22,10 +22,10 @@
        $(".crystals").empty();
        //this is where we'll store our crystal images in an array//
        var crystalImages = 
-       ["../images/blue.png", 
-       "../images/green.png", 
-       "../images/red.png", 
-       "../images/yellow.png"];
+       ["https://vignette.wikia.nocookie.net/mgefanon/images/6/69/Kinetic_Crystal.jpg/revision/latest?cb=20150409231719", 
+       "https://www.crystalmagic.com/assets/images/Amethyst%20Druse%20SM_8.jpg", 
+       "https://i.pinimg.com/736x/69/74/26/697426fc83e104a378a22a2a9beb5312--crystal-cluster-quartz-crystal.jpg", 
+       "https://www.nature.com/polopoly_fs/7.45449.1500565223!/image/WEB_Crystal.jpg_gen/derivatives/landscape_630/WEB_Crystal.jpg"];
        console.log();
        
        //this is where we'll create the overall random number//
@@ -34,18 +34,22 @@
    //this is a for loop to create the four separate crystals//
     $("#randomResult").html("Number to Get: " + randomResult);
    for(i = 0; i < 4; i++) {
+   
     
+   
     //this is where we have the random number between 1-12 for each crystal//
     var random = Math.floor((Math.random() * 11) + 1);
-       var crystal = $("<div>");
+      
+    var crystal = $("<div>");
            crystal.attr({
             "class": 'crystal',
             "data-random": random
            });
            crystal.css({
-             "background-image":"url('" + crystalImages[i] + "")
+               "background-image":"url('" + (crystalImages[i]) + "')",
+               "background-size":"cover"
+               
            })
-       
        $(".crystals").append(crystal);
            
    }
